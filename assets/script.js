@@ -32,9 +32,9 @@ function removeBook (bookId, obj) {
 
 function displayBookDetails(obj) {
   let bookContainer = document.createElement("div");
-  let bookId = `a${Date.now()}`;
+  let bookId = "a" + Math.floor(Math.random()*100000);
   bookContainer.id = bookId;
-  let buttonId = `a${Date.now()}`;
+  let buttonId = "a" + Math.floor(Math.random()*100000);
   bookContainer.innerHTML = `
     <p class="book_title">${obj.title}</p>
     <p class="author_name">${obj.author}</p>
