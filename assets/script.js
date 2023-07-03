@@ -3,21 +3,31 @@ const bookTitle = document.querySelector(".book_title");
 const authorName = document.querySelector(".author_name");
 const article = document.querySelector(".book_details");
 
-const allBooks = [{
-  title : "Mistborn",
-  author : "Brandon Sanderson"
-}];
+
+if (localStorage.getItem('allBooks') != null) {
+  allBooks = JSON.parse(localStorage.getItem('allBooks'))
+}else{
+   allBooks = [{
+    title : "Mistborn",
+    author : "Brandon Sanderson"
+  }];
+}
 
 function Book(title, author) {
   this.title = title;
   this.author = author;
 }
 
+function updateLocalStorage (){
+  localStorage.setItem('allBooks', JSON.stringify(allBooks));
+}
+
 function removeBook (bookId, obj) {
   let bookToRemove = document.querySelector(`#${bookId}`);
   article.removeChild(bookToRemove);
   allBooks.splice(allBooks.indexOf(obj),1);
-  console.log(allBooks)
+  console.log(allBooks);
+  updateLocalStorage();
 }
 
 function displayBookDetails(obj) {
@@ -44,7 +54,13 @@ function addBook() {
   displayBookDetails(newBook);
   bookTitle.value = "";
   authorName.value = "";
+  updateLocalStorage()
 }
 
 addButton.addEventListener("click", addBook);
 window.onload = allBooks.forEach(displayBookDetails);
+
+
+
+
+
