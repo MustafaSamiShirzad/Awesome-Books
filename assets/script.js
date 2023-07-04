@@ -17,7 +17,8 @@ class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
-    this.bookArray = [];
+    this.displayBookDetails = this.displayBookDetails.bind(this);
+    this.bookArray;
     if (localStorage.getItem('bookArray') != null) {
       this.bookArray = JSON.parse(localStorage.getItem('bookArray'));
     } else {
@@ -26,9 +27,7 @@ class Book {
         author: 'Brandon Sanderson',
       }];
     }
-   }
-  
-  
+   } 
   // update method
   updateLocalStorage() {
         localStorage.setItem("bookArray", JSON.stringify(this.bookArray));
@@ -39,7 +38,7 @@ class Book {
         const bookToRemove = document.querySelector(`#${bookId}`);
         article.removeChild(bookToRemove);
         this.bookArray.splice(this.bookArray.indexOf(obj), 1);
-        this.updateLocalStorage();
+        console.log(this.updateLocalStorage())
       }
   // display method
   displayBookDetails(obj) {
@@ -56,17 +55,15 @@ class Book {
           `;
     article.append(bookContainer);
     const removeBtn = document.querySelector(`#${buttonId}`);
-    removeBtn.addEventListener("click", (evt) => {
+    removeBtn.addEventListener("click", (evt) =>  {
       evt.stopPropagation();
-      this.removeBook(bookId, obj);
-    });
-    
+      this.removeBook(bookId,obj);
+    }); 
   }
-
   addBook() {
+    let a  = "a";
     const newBook = new Book(bookTitle.value, authorName.value);
     this.bookArray.push(newBook);
-    console.log(this.bookArray);
     this.displayBookDetails(newBook);
     bookTitle.value = "";
     authorName.value = "";
