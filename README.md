@@ -79,7 +79,7 @@ Example commands:
 
 ```
   cd my-folder
-  git clone https://github.com/IsmaelMastronardi/Portfolio
+  git clone https://github.com/MustafaSamiShirzad/Awesome-Books.git
 ```
 ---
 
