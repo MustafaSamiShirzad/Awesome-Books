@@ -2,7 +2,6 @@ const addButton = document.querySelector('.add_button');
 const bookTitle = document.querySelector('.book_title');
 const authorName = document.querySelector('.author_name');
 const article = document.querySelector('.book_details');
-
 class Book {
   constructor(title, author) {
     this.title = title;
