@@ -1,7 +1,7 @@
-const addButton = document.querySelector(".add_button");
-const bookTitle = document.querySelector(".book_title");
-const authorName = document.querySelector(".author_name");
-const article = document.querySelector(".book_details");
+const addButton = document.querySelector('.add_button');
+const bookTitle = document.querySelector('.book_title');
+const authorName = document.querySelector('.author_name');
+const article = document.querySelector('.book_details');
 
 // let allBooks = [];
 // if (localStorage.getItem('allBooks') != null) {
@@ -30,7 +30,7 @@ class Book {
    } 
   // update method
   updateLocalStorage() {
-        localStorage.setItem("bookArray", JSON.stringify(this.bookArray));
+        localStorage.setItem('bookArray', JSON.stringify(this.bookArray));
       }
   // remove method
    removeBook(bookId, obj) {
@@ -41,7 +41,7 @@ class Book {
       }
   // display method
   displayBookDetails(obj) {
-    const bookContainer = document.createElement("div");
+    const bookContainer = document.createElement('div');
     console.log(obj)
     bookContainer.classList.add('book')
     if ( this.bookArray.indexOf(obj) % 2 === 1){
@@ -51,30 +51,30 @@ class Book {
     bookContainer.id = bookId;
     const buttonId = `a${Math.floor(Math.random() * 100000)}`;
     bookContainer.innerHTML = `
-          <p class="book_title">'${obj.title}' by ${obj.author} </p>
-          <button class="remove_button"
-          id="${buttonId}">Remove</button>
+          <p class='book_title'>'${obj.title}' by ${obj.author} </p>
+          <button class='remove_button'
+          id='${buttonId}'>Remove</button>
           `;
     article.append(bookContainer);
     const removeBtn = document.querySelector(`#${buttonId}`);
-    removeBtn.addEventListener("click", (evt) =>  {
+    removeBtn.addEventListener('click', (evt) =>  {
       evt.stopPropagation();
       this.removeBook(bookId,obj);
     }); 
   }
   addBook() {
-    let a  = "a";
+    let a  = 'a';
     const newBook = new Book(bookTitle.value, authorName.value);
     this.bookArray.push(newBook);
     this.displayBookDetails(newBook);
-    bookTitle.value = "";
-    authorName.value = "";
+    bookTitle.value = '';
+    authorName.value = '';
     this.updateLocalStorage();
   }
 }
 
 const bookObject = new Book();
-addButton.addEventListener("click", function () {
+addButton.addEventListener('click', function () {
   bookObject.addBook();
 });
 window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
@@ -98,7 +98,7 @@ window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
 //   }
 
 //   updateLocalStorage() {
-//     localStorage.setItem("allBooks", JSON.stringify(this.allBooks));
+//     localStorage.setItem('allBooks', JSON.stringify(this.allBooks));
 //   }
 
 //   removeBook(bookId, obj) {
@@ -109,20 +109,20 @@ window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
 //   }
 
 //   displayBookDetails(obj) {
-//     const bookContainer = document.createElement("div");
+//     const bookContainer = document.createElement('div');
 //     const bookId = `a${Math.floor(Math.random() * 100000)}`;
 //     bookContainer.id = bookId;
 //     const buttonId = `a${Math.floor(Math.random() * 100000)}`;
 //     bookContainer.innerHTML = `
-//       <p class="book_title">${obj.title}</p>
-//       <p class="author_name">${obj.author}</p>
-//       <button class="remove_button"
-//       id="${buttonId}">Remove</button>
+//       <p class='book_title'>${obj.title}</p>
+//       <p class='author_name'>${obj.author}</p>
+//       <button class='remove_button'
+//       id='${buttonId}'>Remove</button>
 //       <hr>
 //       `;
 //     article.append(bookContainer);
 //     const removeBtn = document.querySelector(`#${buttonId}`);
-//     removeBtn.addEventListener("click", (evt) => {
+//     removeBtn.addEventListener('click', (evt) => {
 //       evt.stopPropagation();
 //       this.removeBook(bookId, obj);
 //     });
@@ -134,8 +134,8 @@ window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
 //     this.allBooks.push(newBook);
 //     console.log(this.allBooks);
 //     this.displayBookDetails(newBook);
-//     bookTitle.value = "";
-//     authorName.value = "";
+//     bookTitle.value = '';
+//     authorName.value = '';
 //     this.updateLocalStorage();
 //   }
 // }
@@ -158,10 +158,10 @@ window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
 //   bookContainer.id = bookId;
 //   const buttonId = `a${Math.floor(Math.random() * 100000)}`;
 //   bookContainer.innerHTML = `
-//     <p class="book_title">${obj.title}</p>
-//     <p class="author_name">${obj.author}</p>
-//     <button class="remove_button"
-//     id="${buttonId}">Remove</button>
+//     <p class='book_title'>${obj.title}</p>
+//     <p class='author_name'>${obj.author}</p>
+//     <button class='remove_button'
+//     id='${buttonId}'>Remove</button>
 //     <hr>
 //     `;
 //   article.append(bookContainer);
