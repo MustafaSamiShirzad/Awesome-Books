@@ -24,8 +24,7 @@ class Book {
   }
 
   // remove method
-  removeBook(bookId, obj) {
-    const bookToRemove = document.querySelector(`#${bookId}`);
+  removeBook(bookToRemove, obj) {
     article.removeChild(bookToRemove);
     this.bookArray.splice(this.bookArray.indexOf(obj), 1);
     this.updateLocalStorage();
@@ -50,7 +49,7 @@ class Book {
     const removeBtn = document.querySelector(`#${buttonId}`);
     removeBtn.addEventListener('click', (evt) => {
       evt.stopPropagation();
-      this.removeBook(bookId, obj);
+      this.removeBook(bookContainer, obj);
     });
   }
 
