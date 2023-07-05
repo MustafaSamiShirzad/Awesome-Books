@@ -29,6 +29,7 @@ class Book {
     const bookToRemove = document.querySelector(`#${bookId}`);
     article.removeChild(bookToRemove);
     this.bookArray.splice(this.bookArray.indexOf(obj), 1);
+    this.updateLocalStorage()
   }
 
   // display method

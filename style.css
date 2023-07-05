@@ -21,6 +21,10 @@ h1 {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  border: 4px solid;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .book {
