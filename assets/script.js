@@ -27,26 +27,27 @@ class Book {
         author: 'Brandon Sanderson',
       }];
     }
-   } 
+  }
+
   // update method
   updateLocalStorage() {
-        localStorage.setItem('bookArray', JSON.stringify(this.bookArray));
-      }
+    localStorage.setItem('bookArray', JSON.stringify(this.bookArray));
+  }
+
   // remove method
-   removeBook(bookId, obj) {
-        const bookToRemove = document.querySelector(`#${bookId}`);
-        article.removeChild(bookToRemove);
-        this.bookArray.splice(this.bookArray.indexOf(obj), 1);
-        console.log(this.updateLocalStorage())
-      }
+  removeBook(bookId, obj) {
+    const bookToRemove = document.querySelector(`#${bookId}`);
+    article.removeChild(bookToRemove);
+    this.bookArray.splice(this.bookArray.indexOf(obj), 1);
+  }
+
   // display method
   displayBookDetails(obj) {
     const bookContainer = document.createElement('div');
-    console.log(obj)
-    bookContainer.classList.add('book')
-    if ( this.bookArray.indexOf(obj) % 2 === 1){
-      bookContainer.classList.add('white')
-    }    
+    bookContainer.classList.add('book');
+    if (this.bookArray.indexOf(obj) % 2 === 1) {
+      bookContainer.classList.add('white');
+    }
     const bookId = `a${Math.floor(Math.random() * 100000)}`;
     bookContainer.id = bookId;
     const buttonId = `a${Math.floor(Math.random() * 100000)}`;
@@ -57,13 +58,14 @@ class Book {
           `;
     article.append(bookContainer);
     const removeBtn = document.querySelector(`#${buttonId}`);
-    removeBtn.addEventListener('click', (evt) =>  {
+    removeBtn.addEventListener('click', (evt) => {
       evt.stopPropagation();
-      this.removeBook(bookId,obj);
-    }); 
+      this.removeBook(bookId, obj);
+    });
   }
+
   addBook() {
-    let a  = 'a';
+    const a = 'a';
     const newBook = new Book(bookTitle.value, authorName.value);
     this.bookArray.push(newBook);
     this.displayBookDetails(newBook);
@@ -74,7 +76,7 @@ class Book {
 }
 
 const bookObject = new Book();
-addButton.addEventListener('click', function add() {
+addButton.addEventListener('click', () => {
   bookObject.addBook();
 });
 window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
