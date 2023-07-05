@@ -37,8 +37,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[Add and remove books to a list]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -46,7 +44,7 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [https://ismaelmastronardi.github.io/awesomeBooks/]
+- [https://mustafasamishirzad.github.io/Awesome-Books/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
