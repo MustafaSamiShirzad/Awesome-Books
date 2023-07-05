@@ -41,8 +41,9 @@ body {
   padding-right: 1.3rem;
   border-right: 3px solid;
 }
-main{
-  padding-top:30px;
+
+main {
+  padding-top: 30px;
 }
 
 .dateSection {
@@ -161,25 +162,29 @@ input[type="text"] {
     -3px -3px 5px rgba(255, 255, 255, 0.3);
 }
 
-.contact_information{
+.contact_information {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80vh;
-  gap:5rem;
+  gap: 5rem;
 }
-.contact_information h3{
-  font-size:3.5rem;
+
+.contact_information h3 {
+  font-size: 3.5rem;
 }
-.contact_information p{
-  font-size:1.5rem
+
+.contact_information p {
+  font-size: 1.5rem;
 }
-.contact_information ul li a{
+
+.contact_information ul li a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
-.contact_information ul li{
+
+.contact_information ul li {
   font-size: 1.5rem;
 }
 

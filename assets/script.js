@@ -76,29 +76,28 @@ const bookList = document.querySelector('.bookList');
 const addBooks = document.querySelector('.addBooks');
 const contactInformation = document.querySelector('.contact_information');
 
+function changeDisplayedPage(diplay, notDisplayedA, notDisplayedB) {
+  diplay.classList.remove('noDisplay');
+  notDisplayedA.classList.add('noDisplay');
+  notDisplayedB.classList.add('noDisplay');
+}
+function redIndicator(red, noRedA, noRedB) {
+  red.classList.add('dark_red');
+  noRedA.classList.remove('dark_red');
+  noRedB.classList.remove('dark_red');
+}
+
+list.addEventListener('click', () => {
+  changeDisplayedPage(bookList, addBooks, contactInformation);
+  redIndicator(list, add, contact);
+});
+
 add.addEventListener('click', () => {
-  bookList.classList.add('noDisplay');
-  addBooks.classList.remove('noDisplay');
-  contactInformation.classList.add('noDisplay');
-  add.classList.add('dark_red');
-  contact.classList.remove('dark_red');
-  list.classList.remove('dark_red');
+  changeDisplayedPage(addBooks, bookList, contactInformation);
+  redIndicator(add, list, contact);
 });
 
 contact.addEventListener('click', () => {
-  bookList.classList.add('noDisplay');
-  addBooks.classList.add('noDisplay');
-  contactInformation.classList.remove('noDisplay');
-  contact.classList.add('dark_red');
-  add.classList.remove('dark_red');
-  list.classList.remove('dark_red');
-});
-
-list.addEventListener('click', () => {
-  bookList.classList.remove('noDisplay');
-  addBooks.classList.add('noDisplay');
-  contactInformation.classList.add('noDisplay');
-  list.classList.add('dark_red');
-  contact.classList.remove('dark_red');
-  add.classList.remove('dark_red');
+  changeDisplayedPage(contactInformation, addBooks, bookList);
+  redIndicator(contact, list, add);
 });
