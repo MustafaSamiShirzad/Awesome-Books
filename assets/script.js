@@ -31,7 +31,6 @@ class Book {
   // update method
   updateLocalStorage() {
         localStorage.setItem("bookArray", JSON.stringify(this.bookArray));
-        
       }
   // remove method
    removeBook(bookId, obj) {
@@ -43,15 +42,18 @@ class Book {
   // display method
   displayBookDetails(obj) {
     const bookContainer = document.createElement("div");
+    console.log(obj)
+    bookContainer.classList.add('book')
+    if ( this.bookArray.indexOf(obj) % 2 === 1){
+      bookContainer.classList.add('white')
+    }    
     const bookId = `a${Math.floor(Math.random() * 100000)}`;
     bookContainer.id = bookId;
     const buttonId = `a${Math.floor(Math.random() * 100000)}`;
     bookContainer.innerHTML = `
-          <p class="book_title">${obj.title}</p>
-          <p class="author_name">${obj.author}</p>
+          <p class="book_title">'${obj.title}' by ${obj.author} </p>
           <button class="remove_button"
           id="${buttonId}">Remove</button>
-          <hr>
           `;
     article.append(bookContainer);
     const removeBtn = document.querySelector(`#${buttonId}`);
@@ -76,6 +78,7 @@ addButton.addEventListener("click", function () {
   bookObject.addBook();
 });
 window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
+
 
 // class Book {
 //   constructor (title, author) {
