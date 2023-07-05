@@ -3,16 +3,6 @@ const bookTitle = document.querySelector('.book_title');
 const authorName = document.querySelector('.author_name');
 const article = document.querySelector('.book_details');
 
-// let allBooks = [];
-// if (localStorage.getItem('allBooks') != null) {
-//   allBooks = JSON.parse(localStorage.getItem('allBooks'));
-// } else {
-//   allBooks = [{
-//     title: 'Mistborn',
-//     author: 'Brandon Sanderson',
-//   }];
-// }
-
 class Book {
   constructor(title, author) {
     this.title = title;
