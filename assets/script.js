@@ -8,7 +8,7 @@ class Book {
     this.title = title;
     this.author = author;
     this.displayBookDetails = this.displayBookDetails.bind(this);
-    this.bookArray;
+    this.bookArray = [];
     if (localStorage.getItem('bookArray') != null) {
       this.bookArray = JSON.parse(localStorage.getItem('bookArray'));
     } else {
@@ -29,7 +29,7 @@ class Book {
     const bookToRemove = document.querySelector(`#${bookId}`);
     article.removeChild(bookToRemove);
     this.bookArray.splice(this.bookArray.indexOf(obj), 1);
-    this.updateLocalStorage()
+    this.updateLocalStorage();
   }
 
   // display method
@@ -56,7 +56,6 @@ class Book {
   }
 
   addBook() {
-    const a = 'a';
     const newBook = new Book(bookTitle.value, authorName.value);
     this.bookArray.push(newBook);
     this.displayBookDetails(newBook);
