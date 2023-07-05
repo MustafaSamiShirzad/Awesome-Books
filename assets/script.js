@@ -68,3 +68,37 @@ addButton.addEventListener('click', () => {
   bookObject.addBook();
 });
 window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
+
+const list = document.querySelector('#list');
+const add = document.querySelector('#add');
+const contact = document.querySelector('#contact');
+const bookList = document.querySelector('.bookList');
+const addBooks = document.querySelector('.addBooks');
+const contactInformation = document.querySelector('.contact_information');
+
+add.addEventListener('click', () => {
+  bookList.classList.add('noDisplay');
+  addBooks.classList.remove('noDisplay');
+  contactInformation.classList.add('noDisplay');
+  add.classList.add('dark_red');
+  contact.classList.remove('dark_red');
+  list.classList.remove('dark_red');
+});
+
+contact.addEventListener('click', () => {
+  bookList.classList.add('noDisplay');
+  addBooks.classList.add('noDisplay');
+  contactInformation.classList.remove('noDisplay');
+  contact.classList.add('dark_red');
+  add.classList.remove('dark_red');
+  list.classList.remove('dark_red');
+});
+
+list.addEventListener('click', () => {
+  bookList.classList.remove('noDisplay');
+  addBooks.classList.add('noDisplay');
+  contactInformation.classList.add('noDisplay');
+  list.classList.add('dark_red');
+  contact.classList.remove('dark_red');
+  add.classList.remove('dark_red');
+});

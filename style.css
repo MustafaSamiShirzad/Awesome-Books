@@ -202,3 +202,7 @@ input[type="text"] {
   margin-left: 20px;
   font-size: 20px;
 }
+
+.dark_red {
+  color: darkred;
+}
