@@ -37,8 +37,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[Add and remove books to a list]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -46,7 +44,7 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [https://ismaelmastronardi.github.io/awesomeBooks/]
+- [https://mustafasamishirzad.github.io/Awesome-Books/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +79,7 @@ Example commands:
 
 ```
   cd my-folder
-  git clone https://github.com/IsmaelMastronardi/Portfolio
+  git clone https://github.com/MustafaSamiShirzad/Awesome-Books.git
 ```
 ---
 
@@ -164,5 +162,5 @@ If you like this project plese support it through my email mastronardiismael@gma
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+This project is [MIT](./LICENSE) licensed.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

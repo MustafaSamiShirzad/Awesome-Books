@@ -24,8 +24,7 @@ class Book {
   }
 
   // remove method
-  removeBook(bookId, obj) {
-    const bookToRemove = document.querySelector(`#${bookId}`);
+  removeBook(bookToRemove, obj) {
     article.removeChild(bookToRemove);
     this.bookArray.splice(this.bookArray.indexOf(obj), 1);
     this.updateLocalStorage();
@@ -50,7 +49,7 @@ class Book {
     const removeBtn = document.querySelector(`#${buttonId}`);
     removeBtn.addEventListener('click', (evt) => {
       evt.stopPropagation();
-      this.removeBook(bookId, obj);
+      this.removeBook(bookContainer, obj);
     });
   }
 
@@ -69,3 +68,36 @@ addButton.addEventListener('click', () => {
   bookObject.addBook();
 });
 window.onload = bookObject.bookArray.forEach(bookObject.displayBookDetails);
+
+const list = document.querySelector('#list');
+const add = document.querySelector('#add');
+const contact = document.querySelector('#contact');
+const bookList = document.querySelector('.bookList');
+const addBooks = document.querySelector('.addBooks');
+const contactInformation = document.querySelector('.contact_information');
+
+function changeDisplayedPage(diplay, notDisplayedA, notDisplayedB) {
+  diplay.classList.remove('noDisplay');
+  notDisplayedA.classList.add('noDisplay');
+  notDisplayedB.classList.add('noDisplay');
+}
+function redIndicator(red, noRedA, noRedB) {
+  red.classList.add('dark_red');
+  noRedA.classList.remove('dark_red');
+  noRedB.classList.remove('dark_red');
+}
+
+list.addEventListener('click', () => {
+  changeDisplayedPage(bookList, addBooks, contactInformation);
+  redIndicator(list, add, contact);
+});
+
+add.addEventListener('click', () => {
+  changeDisplayedPage(addBooks, bookList, contactInformation);
+  redIndicator(add, list, contact);
+});
+
+contact.addEventListener('click', () => {
+  changeDisplayedPage(contactInformation, addBooks, bookList);
+  redIndicator(contact, list, add);
+});
